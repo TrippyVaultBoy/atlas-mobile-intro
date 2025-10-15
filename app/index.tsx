@@ -1,10 +1,19 @@
 import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import styles from "../assets/styles";
+import { useActivities } from "@/hooks/useActivities";
+import { useActivitiesContext } from "@/components/ActivitiesProvider";
 
 export default function Index() {
+  const {activities} = useActivitiesContext();
   return (
     <View style={styles.container}>
+      {activities.map((activity) => (
+        <Text key={activity.id}>
+          {activity.steps} steps on {new Date(activity.date).toLocaleDateString()}
+        </Text>
+      ))}
+
       {/* Add activity button */}
       <Pressable
         style={styles.button}

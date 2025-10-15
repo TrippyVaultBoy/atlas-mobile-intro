@@ -22,6 +22,19 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
+
+  textInput: {
+    width: "100%",
+    backgroundColor: "#FFFEFE",
+    borderColor: "#000000",
+    borderWidth: 1,
+    padding: 8,
+    marginBottom: 10,
+    color: "black"
+  },
+  inputText: {
+    color: "#666666",
+  }
 })
 
 export default styles;

@@ -1,16 +1,36 @@
 import { router } from "expo-router";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
 import styles from "../assets/styles"
+import { useState } from "react";
+import { useActivitiesContext } from "@/components/ActivitiesProvider";
 
 export default function AddActivityScreen() {
+    const [steps, setSteps] = useState<number>(0);
+    const {insertActivity} = useActivitiesContext();
     return (
         <View style={styles.container}>
+            <Text>Add Activity Screen</Text>
+            
+            <TextInput
+                style={styles.textInput}
+                placeholder="Enter steps"
+                placeholderTextColor="black"
+                keyboardType="number-pad"
+                onChangeText={(value) => setSteps(parseInt(value))}
+            />
+
+            {/* Add activity button */}
             <Pressable
-              style={styles.button}
+                onPress = {() => {
+                    insertActivity(steps, new Date());
+                    router.push("/");
+                }}
+                style={styles.button}
             >
-              <Text style={styles.buttonText}>Add Activity</Text>
+                <Text style={styles.buttonText}>Add Activity</Text>
             </Pressable>
             
+            {/* Go back button */}
             <Pressable
                 style={[styles.button, { backgroundColor: "#D00414" }]}
                 onPress={() => {
