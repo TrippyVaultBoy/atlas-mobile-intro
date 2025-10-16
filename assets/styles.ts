@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
 
   activity: {
     marginTop: 10,
+    marginStart: 10,
+    marginEnd: 10,
     padding: 10,
     borderWidth: 2,
     backgroundColor: "white",

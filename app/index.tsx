@@ -11,7 +11,7 @@ export default function Index() {
   const {activities} = useActivitiesContext();
   const {deleteActivities} = useActivitiesContext();
   return (
-    <View style={[styles.container, {padding: 10}]}>
+    <View style={styles.container}>
       {/* {activities.map((activity) => (
         <Text key={activity.id}>
           {activity.steps} steps on {new Date(activity.date).toLocaleDateString()}
