@@ -4,15 +4,28 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FEF9E6",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   
   heading: {
+    margin: 10,
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+
+  activity: {
+    margin: 10,
+    padding: 10,
+    borderWidth: 2,
+    backgroundColor: "white",
+    borderColor: "#000000",
+  },
+  activityDate: {
+    color: "black"
+  },
+  activitySteps: {
     fontSize: 24,
   },
-  
-  /* Button Styles */
+
   button: {
     backgroundColor: "#1ED2AF",
     padding: 16,
@@ -27,7 +40,7 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#FFFEFE",
     borderColor: "#000000",
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 8,
     marginBottom: 10,
     color: "black"

@@ -2,17 +2,24 @@ import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import styles from "../assets/styles";
 import { useActivities } from "@/hooks/useActivities";
+import Activity from "@/components/Activity";
 import { useActivitiesContext } from "@/components/ActivitiesProvider";
+import { FlashList } from "@shopify/flash-list";
 
 export default function Index() {
   const {activities} = useActivitiesContext();
   return (
     <View style={styles.container}>
-      {activities.map((activity) => (
+      {/* {activities.map((activity) => (
         <Text key={activity.id}>
           {activity.steps} steps on {new Date(activity.date).toLocaleDateString()}
         </Text>
-      ))}
+      ))} */}
+
+      <FlashList
+        renderItem={({ item }) => <Activity activity={item}/>}
+        data={activities}
+      />
 
       {/* Add activity button */}
       <Pressable

@@ -8,8 +8,10 @@ export default function AddActivityScreen() {
     const [steps, setSteps] = useState<number>(0);
     const {insertActivity} = useActivitiesContext();
     return (
-        <View style={styles.container}>
-            <Text>Add Activity Screen</Text>
+        <View style={[styles.container, {justifyContent: "center", alignItems: "center"}]}>
+            <Text style={styles.heading}>
+                Add Activity Screen
+            </Text>
             
             <TextInput
                 style={styles.textInput}
