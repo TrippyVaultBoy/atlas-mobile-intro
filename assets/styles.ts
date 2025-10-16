@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 
   activity: {
-    margin: 10,
+    marginTop: 10,
     padding: 10,
     borderWidth: 2,
     backgroundColor: "white",
@@ -24,6 +24,15 @@ const styles = StyleSheet.create({
   },
   activitySteps: {
     fontSize: 24,
+  },
+
+  action: {
+    marginTop: 10,
+    justifyContent: "center",
+    backgroundColor: "#D00414",
+  },
+  actionText: {
+    color: "white"
   },
 
   button: {

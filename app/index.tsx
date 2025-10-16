@@ -5,12 +5,13 @@ import { useActivities } from "@/hooks/useActivities";
 import Activity from "@/components/Activity";
 import { useActivitiesContext } from "@/components/ActivitiesProvider";
 import { FlashList } from "@shopify/flash-list";
+import SwipeableActivity from "@/components/SwipeableActivity";
 
 export default function Index() {
   const {activities} = useActivitiesContext();
   const {deleteActivities} = useActivitiesContext();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {padding: 10}]}>
       {/* {activities.map((activity) => (
         <Text key={activity.id}>
           {activity.steps} steps on {new Date(activity.date).toLocaleDateString()}
@@ -18,7 +19,7 @@ export default function Index() {
       ))} */}
 
       <FlashList
-        renderItem={({ item }) => <Activity activity={item}/>}
+        renderItem={({ item }) => <SwipeableActivity activity={item}/>}
         data={activities}
       />
 
